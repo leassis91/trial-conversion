@@ -8,7 +8,12 @@ authors = [
 ]
 requires-python = ">=3.11"
 dependencies = [
+    "matplotlib>=3.11.2",
     "pandas>=3.0.5",
+    "psycopg2-binary>=2.9.13",
+    "scikit-learn>=1.9.1",
+    "sqlalchemy>=2.0.52",
+    "xgboost>=3.2.0",
 ]
 
 [project.scripts]
