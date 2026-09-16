@@ -14,7 +14,3 @@ wheels/
 
 # Jupyter
 .ipynb_checkpoints/
-
-# Data and Models
-data/
-model/
