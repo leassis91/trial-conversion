@@ -19,7 +19,7 @@ def evaluate_model(y_test, probs):
     auc = round(roc_auc_score(y_test, probs), 4)
     logger.info(f"XGBoost AUC: {auc:.4f)}")
 
-    return auc
+    return {"AUC": auc}
 
 
 if __name__ == "__main__":

@@ -6,6 +6,8 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT_DIR / "data"
 RAW_DIR = DATA_DIR / "01_raw"
 
+MODELS_DIR = ROOT_DIR / "models"
+
 ID_COL = "trial_id"
 # FEATURES = [
 #     "sessions_3d",

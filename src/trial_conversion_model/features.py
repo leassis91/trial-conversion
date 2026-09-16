@@ -44,11 +44,11 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     Returns:
         tuple[pd.DataFrame, pd.Series]: Dataframe
     """
-    IDCOL = "trial_id"
+    # IDCOL = "trial_id"
     TARGET = "converted"
-    FEATURES = [col for col in df.columns if col not in [TARGET, IDCOL]]
+    # FEATURES = [col for col in df.columns if col not in [TARGET, IDCOL]]
 
-    df = add_features(df[FEATURES])
+    df = add_features(df)
     df = preprocess_data(df)
 
     FEATURES_FILTERED = [

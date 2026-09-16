@@ -35,12 +35,18 @@ def train_lr(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression:
     return lr
 
 
-def save_model(model, filename: str):
-    """Save model in a pickle file.
+def save_model(model, filename: str, output_dir: Path = Path("models")) -> Path:
+    """Save a model as a pickle file.
 
     Args:
-        model (_type_): _description_
-        name_file (str): _description_
+        model: Trained estimator.
+        filename: File name without extension (e.g. "xgb" or "xgb-20260916T181200Z").
+        output_dir: Destination directory. Defaults to "models" relative to cwd.
+
+    Returns:
+        Path of the saved file.
     """
-    output_path = Path(__file__).parent / f"models/{filename}.pkl"
-    joblib.dump(model, output_path)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    path = output_dir / f"{filename}.pkl"
+    joblib.dump(model, path)
+    return path
