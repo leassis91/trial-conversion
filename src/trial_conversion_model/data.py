@@ -12,7 +12,7 @@ load_dotenv()
 DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
 DB_NAME = os.getenv("DB_NAME")
-DB_USERNAME = os.getenv("DB_USERNAME")
+DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 CURRENT_TABLE = os.getenv("CURRENT_TABLE")
 
@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 def load_data(output_dir: Path) -> None:
     engine = create_engine(
-        f"postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+        f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
     )
 
     logger.info("Fetching data...")
