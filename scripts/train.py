@@ -13,7 +13,8 @@ logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(message)s",
 )
 
-if __name__ == "__main__":
+
+def main() -> None:
     df = pd.read_csv(RAW_DIR / "trials_raw.csv")
     X, y = build_features(df)
     X_train, X_test, y_train, y_test = split_data(X, y)
@@ -22,3 +23,7 @@ if __name__ == "__main__":
     save_model(model, f"xgb_{run_id}", MODELS_DIR)
     metrics = evaluate(model, X_test=X_test, y_test=y_test)
     save_metrics(metrics, MODELS_DIR, run_id)
+
+
+if __name__ == "__main__":
+    main()

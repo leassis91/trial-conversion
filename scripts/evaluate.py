@@ -9,7 +9,10 @@ from config.config import MODELS_DIR, RAW_DIR
 from src.trial_conversion_model.features import build_features, split_data
 from src.trial_conversion_model.predict import evaluate, load_latest_model, save_metrics
 
-logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s",
+)
 
 
 def main() -> None:
