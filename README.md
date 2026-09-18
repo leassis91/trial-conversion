@@ -41,7 +41,7 @@ CURRENT_TABLE=
 ## Usage
 
 ```bash
-make help     # list available commands
+make all     # list available commands
 make fetch    # pull the training extract from Postgres
 make train    # build features, train XGBoost, save model and metrics
 ```
@@ -66,13 +66,14 @@ load_metrics(MODELS_DIR).sort_values("metrics.roc_auc", ascending=False)
 ├── models/                        # local only, not versioned
 ├── notebooks/                     # thin shell, imports from the package
 ├── scripts/                       # entry points
+|   ├── evaluate.py                # evaluates latest model
 │   ├── fetch_data.py
 │   └── train.py
 └── src/trial_conversion_model/    # the library
     ├── data.py                    # database extraction
     ├── features.py                # feature engineering, train/test split
     ├── train.py                   # model training and persistence
-    ├── evaluate.py                # metrics computation and storage
+    
     └── predict.py                 # inference
 ```
 
