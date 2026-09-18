@@ -6,8 +6,8 @@ from datetime import datetime
 import pandas as pd
 
 from config.config import MODELS_DIR, RAW_DIR
-from src.trial_conversion_model.features import build_features, split_data
-from src.trial_conversion_model.predict import evaluate, load_latest_model, save_metrics
+from trial_conversion_model.features import build_features, split_data
+from trial_conversion_model.predict import evaluate, load_latest_model, save_metrics
 
 logging.basicConfig(
     level=logging.INFO,

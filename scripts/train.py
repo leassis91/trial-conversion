@@ -4,9 +4,9 @@ from datetime import datetime
 import pandas as pd
 
 from config.config import MODELS_DIR, RAW_DIR
-from src.trial_conversion_model.features import build_features, split_data
-from src.trial_conversion_model.predict import evaluate, save_metrics
-from src.trial_conversion_model.train import save_model, train_xgb
+from trial_conversion_model.features import build_features, split_data
+from trial_conversion_model.predict import evaluate, save_metrics
+from trial_conversion_model.train import save_model, train_xgb
 
 logging.basicConfig(
     level=logging.INFO,
